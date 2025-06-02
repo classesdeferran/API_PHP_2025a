@@ -1,5 +1,10 @@
 <?php
 
+if ($_GET['token'] !== '1234567890abcdefghijklmnopqrstuvwxyz') {
+    http_response_code(403); // Forbidden
+    echo json_encode(['error' => 'Token de acceso incorrecto']);
+    exit();
+}
 
 // Devolver los datos de un país concreto
 // localhost:8000/countries/index.php?country=Spain
